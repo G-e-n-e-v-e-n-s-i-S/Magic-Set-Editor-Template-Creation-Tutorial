@@ -1,0 +1,175 @@
+﻿mse version:	2.0.0
+game:			magic
+short name:		Tutorial 2
+full name:		Second Tutorial Template
+icon:			card_sample.png
+position hint:	002
+
+version:		2020-09-22
+depends on:
+	package:		magic.mse-game
+	version:		2020-04-25
+depends on:
+	package:		magic-mana-large.mse-symbol-font
+	version:		2020-02-07
+
+card width:		375
+card height:	523
+card dpi:		150
+
+
+
+####################### Card Field Looks
+
+card style:
+	border color:
+		left:			0
+		top:			0
+		width:			375
+		height:			523
+		z index:		1
+
+card style:
+	card color:
+		left:			8
+		top:			15
+		width:			359
+		height:			476
+		z index: 		2
+		popup style:	in place
+		render style:	image
+		image:			{ if count_chosen(card.card_color) >= 2 then "goldframe.png" else ( card.card_color + "frame.png" ) }
+
+card style:
+	casting cost:
+		right:			343
+		top:			27
+		width:			38
+		height:			24
+		z index:		22
+		alignment:		right middle
+		always symbol:	true
+		font:
+			name:			MPlantin
+			size:			16
+		symbol font:
+			name:			magic-mana-large
+			size:			16
+
+card style:
+	name:
+		left:			32
+		top:			29
+		right:			338
+		height:			23
+		z index:		21
+		alignment:		left middle
+		font:
+			name:			Beleren Bold
+			size:			16
+			color:			black
+
+card style:
+	image:
+		left:			27
+		top:			57
+		right:			347
+		bottom:			291
+		z index:		11
+		mask:			image_mask.png
+
+card style:
+	rule text:
+		left:			31
+		top:			330
+		width:			312
+		bottom:			476
+		z index:		21
+		alignment:		left middle
+		font:
+			name:			MPlantin
+			italic name:	MPlantin-Italic
+			size:			14
+			scale down to:	8
+			color:			black
+		symbol font:
+			name:			magic-mana-large
+			size:			14
+			scale down to:	8
+		padding left:			6
+		padding right:			5
+		line height hard:		1.2
+		line height line:		1.5
+		line height soft:		0.9
+		line height hard max:	1.3
+		line height line max:	1.6
+
+card style:
+	pt:
+		left:			276
+		top:			475
+		width:			60
+		height:			28
+		z index:		22
+		alignment:		center middle shrink-overflow
+		font:
+			name:				Beleren Bold
+			size:				16
+			color:				black
+			separator color:	red
+
+card style:
+	illustrator:
+		left:			50
+		top:			491
+		width:			200
+		height:			10
+		z index:		21
+		alignment:		left middle
+		font:
+			name:				Beleren Small Caps Bold
+			size:				9
+			color:				white
+
+
+
+####################### Extra Card Field Definitions
+
+extra card field:
+	type:				choice
+	name:				illustrator brush
+	editable:			false
+	save value:			false
+	choice:				dummy choice
+
+extra card field:
+	type:				choice
+	name:				pt box
+	editable:			false
+	save value:			false
+	choice:				dummy choice
+
+
+
+####################### Extra Card Field Looks
+
+extra card style:
+	illustrator brush:
+		left:			29
+		top:			493
+		width:			18
+		height:			9
+		z index:		11
+		render style:	image
+		image:			illustrator_brush.png
+
+extra card style:
+	pt box:
+		left:			247
+		top:			469
+		width:			109
+		height:			38
+		z index:		3
+		visible:		{ card.pt != "" }
+		render style:	image
+		image:			{ if count_chosen(card.card_color) >= 2 then "goldpt.png" else ( card.card_color + "pt.png" ) }

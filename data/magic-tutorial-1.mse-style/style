@@ -1,0 +1,69 @@
+﻿mse version:	2.0.0
+game:			magic
+short name:		Tutorial 1
+full name:		First Tutorial Template
+icon:			card-sample.png
+position hint:	001
+
+version:		2015-12-20
+depends on:
+	package:		magic.mse-game
+	version:		2014-06-25
+
+card width:		375
+card height:	523
+card dpi:		150
+
+
+
+####################### Extra Card Field Definitions
+
+extra card field:
+	type:			image
+	name:			smiley face
+
+extra card field:
+	type:			image
+	name:			frowny face
+
+extra card field:
+	type:			text
+	name:			message
+
+
+
+####################### Extra Card Field Looks
+
+extra card style:
+	smiley face:
+		left:		10
+		width:		200
+		top:		60
+		height:		200
+		z index:	1
+		visible:	true
+		default:	smiley-face-image.png
+
+extra card style:
+	frowny face:
+		left:		150
+		width:		160
+		top:		250
+		height:		200
+		z index:	2
+		visible:	true
+		default:	frowny-face-image.png
+
+extra card style:
+	message:
+		left:		10
+		width:		200
+		top:		480
+		height:		30
+		z index:	3
+		visible:	true
+		alignment:	left middle
+		font:
+			name:		Beleren Bold
+			size:		16
+			color:		black
